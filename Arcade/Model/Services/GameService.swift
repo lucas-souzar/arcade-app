@@ -30,7 +30,7 @@ struct GameService {
         return games
     }
     
-    func getGameById(id: Int) async throws -> GameDetails {
+    func getGameById(id: Int) async throws -> GameDetail {
         let gameUrl = baseURL?.appending(path: "game")
         var components = URLComponents(url: gameUrl!, resolvingAgainstBaseURL: true)
         components?.queryItems = [
@@ -45,8 +45,7 @@ struct GameService {
         }
         
         let decoder = JSONDecoder()
-        let jsonText = String(data: data, encoding: .utf8)
-        let game = try decoder.decode(GameDetails.self, from: data)
+        let game = try decoder.decode(GameDetail.self, from: data)
         
         return game
     }

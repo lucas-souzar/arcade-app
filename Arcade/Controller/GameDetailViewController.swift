@@ -21,11 +21,12 @@ class GameDetailViewController: UIViewController {
     private let imageDownloader = ImageDownloader()
     
     var game: Game!
-    var gameDetail: GameDetails!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = game.title
+        
+        gameImageView.layer.cornerRadius = 15
         
         Task {
             await getOneGame()
@@ -35,7 +36,6 @@ class GameDetailViewController: UIViewController {
     private func getOneGame() async {
         do {
             let gameDetail = try await gameService.getGameById(id: game.id)
-            self.gameDetail = gameDetail
             
             await MainActor.run {
                 gameDescriptionLabel.text = gameDetail.shortDescription
@@ -46,27 +46,18 @@ class GameDetailViewController: UIViewController {
                 releaseDateLabel.text = gameDetail.releaseDate
             }
             
-            
             guard let screenshots = gameDetail.screenshots else {
                 return
             }
             
             if screenshots.count > 0 {
                 let image = try await imageDownloader.downloadImage(urlString: screenshots[0].image)
-                print(image)
                 await MainActor.run {
                     gameImageView.image = image
                 }
             }
         } catch {
             print(error)
-        }
-    }
-    
-    func setImage(urlString: String) async {
-        Task {
-            let image = try await imageDownloader.downloadImage(urlString: urlString)
-            gameImageView.image = image
         }
     }
     

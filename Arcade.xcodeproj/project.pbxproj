@@ -180,9 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				BE8FF8202A60F0E8001FD416 /* Game.swift */,
+				BE8FF8362A6603E0001FD416 /* GameDetails.swift */,
 				BE8FF8222A60F240001FD416 /* SystemRequirements.swift */,
 				BE8FF8242A60F328001FD416 /* Screenshots.swift */,
-				BE8FF8362A6603E0001FD416 /* GameDetails.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
