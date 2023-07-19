@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="62" id="KGk-i7-Jjw" customClass="GameTableViewCell" customModule="Arcade" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameCell" rowHeight="62" id="KGk-i7-Jjw" customClass="GameCell" customModule="Arcade">
             <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -21,8 +21,10 @@
                         <rect key="frame" x="15" y="10.333333333333329" width="45" height="42"/>
                         <color key="tintColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="COS-89-weG"/>
                             <constraint firstAttribute="width" constant="45" id="Skc-ga-TlZ"/>
                             <constraint firstAttribute="height" constant="45" id="qmb-gC-fQM"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="xLd-HJ-x4y"/>
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="bdM-pz-HGS">
@@ -43,28 +45,28 @@
                         </subviews>
                     </stackView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gZA-RO-Ncl">
-                        <rect key="frame" x="294" y="25" width="16" height="12.333333333333329"/>
+                        <rect key="frame" x="295" y="25.666666666666671" width="15" height="11.333333333333329"/>
                         <color key="tintColor" systemColor="systemGrayColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="16" id="JzE-AQ-lUP"/>
-                            <constraint firstAttribute="width" constant="16" id="o1n-aP-mdv"/>
+                            <constraint firstAttribute="height" constant="15" id="rmS-v4-quX"/>
+                            <constraint firstAttribute="width" constant="15" id="tFX-sP-KcT"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="bdM-pz-HGS" firstAttribute="leading" secondItem="Kb2-UW-tj2" secondAttribute="trailing" constant="10" id="336-RF-JyZ"/>
-                    <constraint firstAttribute="trailing" secondItem="gZA-RO-Ncl" secondAttribute="trailing" constant="10" id="3sJ-Xe-8gL"/>
-                    <constraint firstItem="Kb2-UW-tj2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Oz7-Ie-9tG"/>
-                    <constraint firstItem="bdM-pz-HGS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="aAQ-52-dlb"/>
-                    <constraint firstItem="gZA-RO-Ncl" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bdm-dx-Hdw"/>
-                    <constraint firstItem="Kb2-UW-tj2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mzp-ah-yYN"/>
+                    <constraint firstItem="bdM-pz-HGS" firstAttribute="leading" secondItem="Kb2-UW-tj2" secondAttribute="trailing" constant="10" id="41M-xw-6y3"/>
+                    <constraint firstItem="gZA-RO-Ncl" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="J75-XX-DT6"/>
+                    <constraint firstAttribute="trailing" secondItem="gZA-RO-Ncl" secondAttribute="trailing" constant="10" id="bkY-Bq-fpP"/>
+                    <constraint firstItem="bdM-pz-HGS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gy3-af-4wJ"/>
+                    <constraint firstItem="Kb2-UW-tj2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="xCg-kZ-9sD"/>
+                    <constraint firstItem="Kb2-UW-tj2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xps-oz-Npa"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="gameTitleLabel" destination="shz-P4-FOn" id="xu0-OG-tN6"/>
-                <outlet property="genreLabel" destination="O5K-5q-LPn" id="eef-K6-mm1"/>
-                <outlet property="thumbnailImageView" destination="Kb2-UW-tj2" id="Qyq-zO-N07"/>
+                <outlet property="gameTitle" destination="shz-P4-FOn" id="yhB-Bu-Vxu"/>
+                <outlet property="genre" destination="O5K-5q-LPn" id="vgJ-ig-sAm"/>
+                <outlet property="thumbnailImage" destination="Kb2-UW-tj2" id="IH1-P7-QHP"/>
             </connections>
             <point key="canvasLocation" x="138.93129770992365" y="26.760563380281692"/>
         </tableViewCell>

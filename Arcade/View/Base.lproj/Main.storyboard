@@ -203,7 +203,7 @@
         <!--Search-->
         <scene sceneID="QJB-sL-rfd">
             <objects>
-                <viewController title="Search" id="aIt-MH-2mP" sceneMemberID="viewController">
+                <viewController title="Search" id="aIt-MH-2mP" customClass="GameSearchViewController" customModule="Arcade" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LPu-9a-ByG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -289,6 +289,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="sI7-5C-YeT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bpd-PU-WI0">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

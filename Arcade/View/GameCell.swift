@@ -7,13 +7,13 @@
 
 import UIKit
 
-class GameTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var thumbnailImageView: UIImageView!
-    @IBOutlet weak var gameTitleLabel: UILabel!
-    @IBOutlet weak var genreLabel: UILabel!
+class GameCell: UITableViewCell {
     
-    static let identifier = "GameTableViewCell"
+    @IBOutlet weak var thumbnailImage: UIImageView!
+    @IBOutlet weak var gameTitle: UILabel!
+    @IBOutlet weak var genre: UILabel!
+    
+    static let identifier = "GameCell"
     
     private let imageDownloader = ImageDownloader()
         
@@ -29,18 +29,18 @@ class GameTableViewCell: UITableViewCell {
     }
     
     static func nib() -> UINib {
-        UINib.init(nibName: GameTableViewCell.identifier, bundle: nil)
+        UINib.init(nibName: GameCell.identifier, bundle: nil)
     }
     
     func configure(game: Game) {
-        gameTitleLabel.text = game.title
-        genreLabel.text = game.genre
-        thumbnailImageView.image = UIImage(systemName: "gamecontroller.fill")
-        thumbnailImageView.layer.cornerRadius = 15
+        gameTitle.text = game.title
+        genre.text = game.genre
+        thumbnailImage.image = UIImage(systemName: "gamecontroller.fill")
+        thumbnailImage.layer.cornerRadius = 15
         
         Task {
             let image = try await imageDownloader.downloadImage(urlString: game.thumbnail)
-            thumbnailImageView.image = image
+            thumbnailImage.image = image
         }
     }
     

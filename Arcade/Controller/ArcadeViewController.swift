@@ -36,7 +36,7 @@ class ArcadeViewController: UIViewController {
         
         tableView.dataSource = dataSource
         tableView.delegate = self
-        tableView.register(GameTableViewCell.nib(), forCellReuseIdentifier: GameTableViewCell.identifier)
+        tableView.register(GameCell.nib(), forCellReuseIdentifier: GameCell.identifier)
         
         tableView.rowHeight = 60
         tableView.layer.cornerRadius = 15
@@ -60,7 +60,7 @@ class ArcadeViewController: UIViewController {
     //MARK: - Data source method
     func setupDataSource() -> DataSource {
         return DataSource(tableView: tableView) { tableView, indexPath, game in
-            let cell = tableView.dequeueReusableCell(withIdentifier: GameTableViewCell.identifier, for: indexPath) as! GameTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: GameCell.identifier, for: indexPath) as! GameCell
             
             cell.configure(game: game)
             
