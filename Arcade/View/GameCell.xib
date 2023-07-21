@@ -64,6 +64,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="chevronRight" destination="gZA-RO-Ncl" id="LXm-r2-ErD"/>
                 <outlet property="gameTitle" destination="shz-P4-FOn" id="yhB-Bu-Vxu"/>
                 <outlet property="genre" destination="O5K-5q-LPn" id="vgJ-ig-sAm"/>
                 <outlet property="thumbnailImage" destination="Kb2-UW-tj2" id="IH1-P7-QHP"/>

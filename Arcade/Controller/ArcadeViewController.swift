@@ -7,13 +7,13 @@
 
 import UIKit
 
-enum Section: CaseIterable {
+enum SectionArcadeList: CaseIterable {
     case main
 }
 
 class ArcadeViewController: UIViewController {
-    typealias DataSource = UITableViewDiffableDataSource<Section, Game>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Game>
+    typealias DataSource = UITableViewDiffableDataSource<SectionArcadeList, Game>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<SectionArcadeList, Game>
     
     @IBOutlet weak var tableView: UITableView!
     

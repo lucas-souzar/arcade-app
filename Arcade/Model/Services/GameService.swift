@@ -50,4 +50,24 @@ struct GameService {
         return game
     }
     
+    func getGameByCategory(category: String) async throws -> [Game] {
+        let gameUrl = baseURL?.appending(path: "games")
+        var components = URLComponents(url: gameUrl!, resolvingAgainstBaseURL: true)
+        components?.queryItems = [
+            URLQueryItem(name: "category", value: category)
+        ]
+        let byCategoryUrl = components?.url!
+        
+        let (data, response) = try await URLSession.shared.data(from: byCategoryUrl!)
+        
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw GameApiError.gameRequestFailed
+        }
+        
+        let decoder = JSONDecoder()
+        let games = try decoder.decode([Game].self, from: data)
+        
+        return games
+    }
+    
 }

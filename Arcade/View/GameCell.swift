@@ -12,6 +12,7 @@ class GameCell: UITableViewCell {
     @IBOutlet weak var thumbnailImage: UIImageView!
     @IBOutlet weak var gameTitle: UILabel!
     @IBOutlet weak var genre: UILabel!
+    @IBOutlet weak var chevronRight: UIImageView!
     
     static let identifier = "GameCell"
     
@@ -32,11 +33,15 @@ class GameCell: UITableViewCell {
         UINib.init(nibName: GameCell.identifier, bundle: nil)
     }
     
-    func configure(game: Game) {
+    func configure(game: Game, hasDetail: Bool = true) {
         gameTitle.text = game.title
         genre.text = game.genre
         thumbnailImage.image = UIImage(systemName: "gamecontroller.fill")
         thumbnailImage.layer.cornerRadius = 15
+        
+        if hasDetail == false {
+            chevronRight.isHidden = true
+        }
         
         Task {
             let image = try await imageDownloader.downloadImage(urlString: game.thumbnail)
