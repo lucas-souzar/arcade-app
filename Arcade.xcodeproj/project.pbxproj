@@ -24,12 +24,10 @@
 		BE8FF8232A60F240001FD416 /* SystemRequirements.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FF8222A60F240001FD416 /* SystemRequirements.swift */; };
 		BE8FF8252A60F328001FD416 /* Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FF8242A60F328001FD416 /* Screenshots.swift */; };
 		BE8FF8272A60F740001FD416 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FF8262A60F740001FD416 /* GameService.swift */; };
-		BE8FF8292A60FF04001FD416 /* ArcadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FF8282A60FF04001FD416 /* ArcadeViewController.swift */; };
 		BE8FF82C2A61C4DF001FD416 /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FF82A2A61C4DF001FD416 /* GameCell.swift */; };
 		BE8FF82D2A61C4DF001FD416 /* GameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE8FF82B2A61C4DF001FD416 /* GameCell.xib */; };
 		BE8FF82F2A61D8C7001FD416 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FF82E2A61D8C7001FD416 /* ImageDownloader.swift */; };
 		BE8FF8312A61D90C001FD416 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FF8302A61D90C001FD416 /* ImageCache.swift */; };
-		BE8FF8332A61E287001FD416 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FF8322A61E287001FD416 /* GameDetailViewController.swift */; };
 		BE8FF8372A6603E0001FD416 /* GameDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FF8362A6603E0001FD416 /* GameDetails.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,12 +70,10 @@
 		BE8FF8222A60F240001FD416 /* SystemRequirements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemRequirements.swift; sourceTree = "<group>"; };
 		BE8FF8242A60F328001FD416 /* Screenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshots.swift; sourceTree = "<group>"; };
 		BE8FF8262A60F740001FD416 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
-		BE8FF8282A60FF04001FD416 /* ArcadeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadeViewController.swift; sourceTree = "<group>"; };
 		BE8FF82A2A61C4DF001FD416 /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
 		BE8FF82B2A61C4DF001FD416 /* GameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameCell.xib; sourceTree = "<group>"; };
 		BE8FF82E2A61D8C7001FD416 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		BE8FF8302A61D90C001FD416 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
-		BE8FF8322A61E287001FD416 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		BE8FF8362A6603E0001FD416 /* GameDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,11 +178,9 @@
 		BE8FF81D2A60EBF6001FD416 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BE8FF8282A60FF04001FD416 /* ArcadeViewController.swift */,
-				BE8FF8322A61E287001FD416 /* GameDetailViewController.swift */,
-				BE4EFFF82A683BEC0082290C /* GameSearchViewController.swift */,
 				BE6B97D82A6F197300D932E3 /* GameListViewController.swift */,
 				BE6B981C2A7596CF00D932E3 /* GameViewController.swift */,
+				BE4EFFF82A683BEC0082290C /* GameSearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -353,10 +347,8 @@
 				BE6B981D2A7596CF00D932E3 /* GameViewController.swift in Sources */,
 				BE4EFFF92A683BEC0082290C /* GameSearchViewController.swift in Sources */,
 				BE8FF7EE2A60EAFB001FD416 /* SceneDelegate.swift in Sources */,
-				BE8FF8332A61E287001FD416 /* GameDetailViewController.swift in Sources */,
 				BE6B97DB2A6F1D5700D932E3 /* UIColor+Arcade.swift in Sources */,
 				BE8FF8212A60F0E8001FD416 /* Game.swift in Sources */,
-				BE8FF8292A60FF04001FD416 /* ArcadeViewController.swift in Sources */,
 				BE8FF82F2A61D8C7001FD416 /* ImageDownloader.swift in Sources */,
 				BE6B97D92A6F197300D932E3 /* GameListViewController.swift in Sources */,
 				BE6B98252A75A7DD00D932E3 /* GameViewCell.swift in Sources */,
