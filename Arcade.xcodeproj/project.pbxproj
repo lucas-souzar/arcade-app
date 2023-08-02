@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BE4EFFF92A683BEC0082290C /* GameSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4EFFF82A683BEC0082290C /* GameSearchViewController.swift */; };
+		BE6B97D92A6F197300D932E3 /* GameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B97D82A6F197300D932E3 /* GameListViewController.swift */; };
+		BE6B97DB2A6F1D5700D932E3 /* UIColor+Arcade.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B97DA2A6F1D5700D932E3 /* UIColor+Arcade.swift */; };
+		BE6B981D2A7596CF00D932E3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B981C2A7596CF00D932E3 /* GameViewController.swift */; };
+		BE6B98252A75A7DD00D932E3 /* GameViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B98242A75A7DD00D932E3 /* GameViewCell.swift */; };
 		BE8FF7EC2A60EAFB001FD416 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FF7EB2A60EAFB001FD416 /* AppDelegate.swift */; };
 		BE8FF7EE2A60EAFB001FD416 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FF7ED2A60EAFB001FD416 /* SceneDelegate.swift */; };
 		BE8FF7F32A60EAFB001FD416 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8FF7F12A60EAFB001FD416 /* Main.storyboard */; };
@@ -48,6 +52,10 @@
 
 /* Begin PBXFileReference section */
 		BE4EFFF82A683BEC0082290C /* GameSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSearchViewController.swift; sourceTree = "<group>"; };
+		BE6B97D82A6F197300D932E3 /* GameListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewController.swift; sourceTree = "<group>"; };
+		BE6B97DA2A6F1D5700D932E3 /* UIColor+Arcade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Arcade.swift"; sourceTree = "<group>"; };
+		BE6B981C2A7596CF00D932E3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		BE6B98242A75A7DD00D932E3 /* GameViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewCell.swift; sourceTree = "<group>"; };
 		BE8FF7E82A60EAFB001FD416 /* Arcade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arcade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8FF7EB2A60EAFB001FD416 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE8FF7ED2A60EAFB001FD416 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +163,7 @@
 			children = (
 				BE8FF81F2A60EC20001FD416 /* Services */,
 				BE8FF81E2A60EC0C001FD416 /* Data */,
+				BE6B97DA2A6F1D5700D932E3 /* UIColor+Arcade.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +174,7 @@
 				BE8FF7F12A60EAFB001FD416 /* Main.storyboard */,
 				BE8FF82A2A61C4DF001FD416 /* GameCell.swift */,
 				BE8FF82B2A61C4DF001FD416 /* GameCell.xib */,
+				BE6B98242A75A7DD00D932E3 /* GameViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,6 +185,8 @@
 				BE8FF8282A60FF04001FD416 /* ArcadeViewController.swift */,
 				BE8FF8322A61E287001FD416 /* GameDetailViewController.swift */,
 				BE4EFFF82A683BEC0082290C /* GameSearchViewController.swift */,
+				BE6B97D82A6F197300D932E3 /* GameListViewController.swift */,
+				BE6B981C2A7596CF00D932E3 /* GameViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -338,12 +350,16 @@
 				BE8FF8252A60F328001FD416 /* Screenshots.swift in Sources */,
 				BE8FF8232A60F240001FD416 /* SystemRequirements.swift in Sources */,
 				BE8FF7EC2A60EAFB001FD416 /* AppDelegate.swift in Sources */,
+				BE6B981D2A7596CF00D932E3 /* GameViewController.swift in Sources */,
 				BE4EFFF92A683BEC0082290C /* GameSearchViewController.swift in Sources */,
 				BE8FF7EE2A60EAFB001FD416 /* SceneDelegate.swift in Sources */,
 				BE8FF8332A61E287001FD416 /* GameDetailViewController.swift in Sources */,
+				BE6B97DB2A6F1D5700D932E3 /* UIColor+Arcade.swift in Sources */,
 				BE8FF8212A60F0E8001FD416 /* Game.swift in Sources */,
 				BE8FF8292A60FF04001FD416 /* ArcadeViewController.swift in Sources */,
 				BE8FF82F2A61D8C7001FD416 /* ImageDownloader.swift in Sources */,
+				BE6B97D92A6F197300D932E3 /* GameListViewController.swift in Sources */,
+				BE6B98252A75A7DD00D932E3 /* GameViewCell.swift in Sources */,
 				BE8FF82C2A61C4DF001FD416 /* GameCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
