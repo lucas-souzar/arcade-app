@@ -11,4 +11,8 @@ extension UIColor {
     static var arcadeListCellBackground: UIColor {
         UIColor(named: "ArcadeListCellBackground") ?? .secondarySystemBackground
     }
+    
+    static var arcadeText: UIColor {
+        UIColor(named: "ArcadeText") ?? .systemGray
+    }
 }

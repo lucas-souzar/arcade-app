@@ -52,14 +52,14 @@ class GameSearchViewController: UIViewController {
         
         messageNotFound = UILabel()
         messageNotFound.text = "No recent searches..."
-        messageNotFound.textColor = .black
+        messageNotFound.textColor = .arcadeText
         messageNotFound.font = .boldSystemFont(ofSize: 20)
         messageNotFound.numberOfLines = 0
         messageNotFound.textAlignment = .center
         
         messageSearchBy = UILabel()
         messageSearchBy.text = "Search by category."
-        messageSearchBy.textColor = .black
+        messageSearchBy.textColor = .arcadeText
         messageSearchBy.font = .systemFont(ofSize: 14)
         
         labelsStatckView = UIStackView()
