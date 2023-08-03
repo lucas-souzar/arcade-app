@@ -15,4 +15,8 @@ extension UIColor {
     static var arcadeText: UIColor {
         UIColor(named: "ArcadeText") ?? .systemGray
     }
+    
+    static var arcadeTextInvert: UIColor {
+        UIColor(named: "ArcadeTextInvert") ?? .systemGray
+    }
 }

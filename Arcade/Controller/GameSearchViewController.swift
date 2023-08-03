@@ -12,10 +12,11 @@ enum SectionGameList: CaseIterable {
 }
 
 class GameSearchViewController: UIViewController {
-    typealias DataSource = UITableViewDiffableDataSource<SectionGameList, Game>
+    typealias DataSource = UICollectionViewDiffableDataSource<SectionGameList, Game>
     typealias Snapshot = NSDiffableDataSourceSnapshot<SectionGameList, Game>
     
-    private var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     private var searchController: UISearchController!
     private var messageNotFound: UILabel!
     private var messageSearchBy: UILabel!
@@ -26,6 +27,7 @@ class GameSearchViewController: UIViewController {
     private var searchTimer: Timer?
     
     private let gameService = GameService()
+    private let imageDownloader = ImageDownloader()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +37,11 @@ class GameSearchViewController: UIViewController {
         setupConstraints()
         
         dataSource = setupDataSource()
-        tableView.dataSource = dataSource
+        collectionView.dataSource = dataSource
+        collectionView.collectionViewLayout = setupLayout()
     }
     
     private func setupComponents() {
-        tableView = UITableView()
-        tableView.rowHeight = 60
-        tableView.register(GameCell.nib(), forCellReuseIdentifier: GameCell.identifier)
-        
         searchController = UISearchController()
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
@@ -71,8 +70,6 @@ class GameSearchViewController: UIViewController {
     }
     
     private func setupIU() {
-        view.addSubview(tableView)
-        
         labelsStatckView.addArrangedSubview(messageNotFound)
         labelsStatckView.addArrangedSubview(messageSearchBy)
         view.addSubview(labelsStatckView)
@@ -81,17 +78,7 @@ class GameSearchViewController: UIViewController {
     }
     
     private func setupConstraints() {
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-        ])
-        
         labelsStatckView.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             labelsStatckView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             labelsStatckView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
@@ -99,7 +86,6 @@ class GameSearchViewController: UIViewController {
         ])
         
         spinner.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             spinner.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             spinner.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
@@ -140,17 +126,46 @@ class GameSearchViewController: UIViewController {
             messageNotFound.text = "No category found, please check the correct parameters..."
         }
     }
-    
-    private func setupDataSource() -> DataSource {
-        return DataSource(tableView: tableView) { tableView, indexPath, game in
-            let cell = tableView.dequeueReusableCell(withIdentifier: GameCell.identifier, for: indexPath) as! GameCell
+
+}
+
+extension GameSearchViewController {
+    func setupDataSource() -> DataSource {
+        return DataSource(collectionView: collectionView) { collectionView, indexPath, game in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardGameCell", for: indexPath) as! GameCardViewCell
+            cell.setup(thumbnail: nil, name: "")
             
-            cell.configure(game: game, hasDetail: false)
+            Task {
+                if let currentPath = collectionView.indexPath(for: cell), currentPath == indexPath {
+                    let image = try await self.imageDownloader.downloadImage(urlString: game.thumbnail)
+                    cell.setup(thumbnail: image, name: game.title)
+                }
+            }
             
             return cell
         }
     }
+    
+    func setupLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout {
+            (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
 
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(1))
+            
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            item.contentInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
+            
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(190))
+            
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+            
+            let section = NSCollectionLayoutSection(group: group)
+            section.contentInsets = .init(top: 5, leading: 5, bottom: 0, trailing: 5)
+            
+            return section
+        }
+        return layout
+    }
 }
 
 extension GameSearchViewController: UISearchResultsUpdating {
