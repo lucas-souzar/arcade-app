@@ -9,17 +9,13 @@ import UIKit
 
 class GameCardViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var frameView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
     func setup(thumbnail: UIImage?, name: String) {
-        frameView.layoutIfNeeded()
-        frameView.clipsToBounds = true
-        frameView.layer.cornerRadius = 10
-        
         imageView.image = thumbnail
         imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 8
         
         nameLabel.text = name
     }
