@@ -39,6 +39,7 @@ class GameSearchViewController: UIViewController {
         dataSource = setupDataSource()
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = setupLayout()
+        collectionView.delegate = self
     }
     
     private func setupComponents() {
@@ -165,6 +166,22 @@ extension GameSearchViewController {
             return section
         }
         return layout
+    }
+}
+
+extension GameSearchViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        guard let game = dataSource?.itemIdentifier(for: indexPath) else { return false }
+        
+        performSegue(withIdentifier: "GameCardSegue", sender: game)
+        
+        return false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GameCardSegue", let gameVC = segue.destination as? GameViewController, let game = sender as? Game {
+            gameVC.game = game
+        }
     }
 }
 

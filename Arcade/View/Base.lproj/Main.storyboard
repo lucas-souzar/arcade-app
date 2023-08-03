@@ -219,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D9a-bz-YAf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13" y="1437"/>
+            <point key="canvasLocation" x="463" y="1487"/>
         </scene>
         <!--Search-->
         <scene sceneID="QJB-sL-rfd">
@@ -305,6 +305,7 @@
                     <navigationItem key="navigationItem" title="Search" largeTitleDisplayMode="always" id="gDj-ah-cxY"/>
                     <connections>
                         <outlet property="collectionView" destination="oth-z5-Mqd" id="uq8-5E-fOY"/>
+                        <segue destination="ZNN-uG-veR" kind="show" identifier="GameCardSegue" id="tbj-HB-7rn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Nd-Fn-zED" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -401,6 +402,9 @@
             <point key="canvasLocation" x="13" y="-42"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tbj-HB-7rn"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="gamecontroller.fill" catalog="system" width="128" height="79"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
