@@ -67,53 +67,5 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1BF6B137-0D5A-4846-AABB-DE4632492906"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arcade/Model/Services/GameService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "getGameById(id:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1BF6B137-0D5A-4846-AABB-DE4632492906 - 957a0e6c1834c450"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for Arcade.GameService.getGameById(id: Swift.Int) async throws -&gt; Arcade.Game"
-                  moduleName = "Arcade"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lucassouza/Documents/iOSProjects/Arcade/Arcade/Model/Services/GameService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "1288">
-               </Location>
-               <Location
-                  uuid = "1BF6B137-0D5A-4846-AABB-DE4632492906 - 38f9f6a1c81b5071"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for Arcade.GameService.getGameById(id: Swift.Int) async throws -&gt; Arcade.GameDetails"
-                  moduleName = "Arcade"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lucassouza/Documents/iOSProjects/Arcade/Arcade/Model/Services/GameService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "1288">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
