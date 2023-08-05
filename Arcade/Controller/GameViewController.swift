@@ -99,8 +99,16 @@ class GameViewController: UIViewController {
             
             await dataSource?.apply(snapshot, animatingDifferences: true)
         } catch {
-            print(error)
+            displayError(error, title: "Failed to fetch game details")
         }
+    }
+    
+    func displayError(_ error: Error, title: String) {
+        guard let _ = viewIfLoaded?.window else { return }
+        let alert = UIAlertController(title: title, message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 
 }

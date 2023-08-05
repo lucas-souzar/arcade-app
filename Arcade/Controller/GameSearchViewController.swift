@@ -7,11 +7,11 @@
 
 import UIKit
 
-enum SectionGameList: CaseIterable {
-    case main
-}
-
 class GameSearchViewController: UIViewController {
+    enum SectionGameList: CaseIterable {
+        case main
+    }
+    
     typealias DataSource = UICollectionViewDiffableDataSource<SectionGameList, Game>
     typealias Snapshot = NSDiffableDataSourceSnapshot<SectionGameList, Game>
     

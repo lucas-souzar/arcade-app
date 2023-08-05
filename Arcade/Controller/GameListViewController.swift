@@ -48,7 +48,7 @@ class GameListViewController: UIViewController {
                         
             await dataSource?.apply(snapshot, animatingDifferences: true)
         } catch {
-            print(error)
+            displayError(error, title: "Failed to fetch game list")
         }
     }
     
@@ -91,7 +91,14 @@ class GameListViewController: UIViewController {
         let listConfiguration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         return UICollectionViewCompositionalLayout.list(using: listConfiguration)
     }
-
+    
+    func displayError(_ error: Error, title: String) {
+        guard let _ = viewIfLoaded?.window else { return }
+        let alert = UIAlertController(title: title, message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension GameListViewController: UICollectionViewDelegate {
