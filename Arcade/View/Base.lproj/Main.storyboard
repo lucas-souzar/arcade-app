@@ -10,6 +10,68 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Game Detail View Controller-->
+        <scene sceneID="zAR-AK-65g">
+            <objects>
+                <viewController id="lxM-Ty-Fe2" customClass="GameDetailViewController" customModule="Arcade" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XNF-tq-clt">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Woc-7y-9ur">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G7K-iO-KHF">
+                                    <size key="itemSize" width="195" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BannerCell" id="g5e-xL-7fK" customClass="BannerViewCell" customModule="Arcade" customModuleProvider="target">
+                                        <rect key="frame" x="99" y="0.0" width="195" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7Vs-Tz-WLS">
+                                            <rect key="frame" x="0.0" y="0.0" width="195" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lTW-3K-dy6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="195" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="lTW-3K-dy6" secondAttribute="trailing" id="3Ue-Po-qR9"/>
+                                                <constraint firstItem="lTW-3K-dy6" firstAttribute="top" secondItem="7Vs-Tz-WLS" secondAttribute="top" id="AH6-AH-pYy"/>
+                                                <constraint firstItem="lTW-3K-dy6" firstAttribute="leading" secondItem="7Vs-Tz-WLS" secondAttribute="leading" id="a4q-ma-YsD"/>
+                                                <constraint firstAttribute="bottom" secondItem="lTW-3K-dy6" secondAttribute="bottom" id="cf1-jx-BzV"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="195" height="128"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="lTW-3K-dy6" id="4SW-wn-MtV"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5tC-8Q-HYz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5tC-8Q-HYz" firstAttribute="bottom" secondItem="Woc-7y-9ur" secondAttribute="bottom" id="Tlh-KC-oLY"/>
+                            <constraint firstItem="5tC-8Q-HYz" firstAttribute="trailing" secondItem="Woc-7y-9ur" secondAttribute="trailing" id="hZX-Au-FcF"/>
+                            <constraint firstItem="Woc-7y-9ur" firstAttribute="leading" secondItem="5tC-8Q-HYz" secondAttribute="leading" id="nhx-ho-2tf"/>
+                            <constraint firstItem="Woc-7y-9ur" firstAttribute="top" secondItem="5tC-8Q-HYz" secondAttribute="top" id="uMO-NW-hyf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="J7G-bW-kmU"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Woc-7y-9ur" id="bMh-kW-IL4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iCc-lK-iPl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="418" y="1492"/>
+        </scene>
         <!--Game List View Controller-->
         <scene sceneID="iDc-tF-fYx">
             <objects>
@@ -22,7 +84,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="fMN-BC-FGh"/>
                     <connections>
-                        <segue destination="ZNN-uG-veR" kind="show" identifier="GameViewSegue" id="w3s-o0-CNJ"/>
+                        <segue destination="lxM-Ty-Fe2" kind="show" identifier="GameViewSegue" id="eu2-AA-asa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKI-8j-nH3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -38,7 +100,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vGH-j1-wcy">
-                                <rect key="frame" x="0.0" y="103" width="393" height="200"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="ZtJ-Xn-Oqm"/>
@@ -77,13 +139,13 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veQ-fb-W9z">
-                                <rect key="frame" x="15" y="323" width="363" height="20.333333333333314"/>
+                                <rect key="frame" x="15" y="279" width="363" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="zga-MF-Ql0">
-                                <rect key="frame" x="15" y="363.33333333333331" width="363" height="41.666666666666686"/>
+                                <rect key="frame" x="15" y="319.33333333333331" width="363" height="41.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMt-NZ-zt9">
                                         <rect key="frame" x="0.0" y="0.0" width="363" height="20.333333333333332"/>
@@ -100,20 +162,20 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYW-NS-5LW" userLabel="Divider">
-                                <rect key="frame" x="15" y="425" width="363" height="1"/>
+                                <rect key="frame" x="15" y="381" width="363" height="1"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="wbO-g2-ofT"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Informations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxd-oQ-VvD">
-                                <rect key="frame" x="15" y="446" width="363" height="28.666666666666686"/>
+                                <rect key="frame" x="15" y="402" width="363" height="28.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="lrW-Y9-6m4">
-                                <rect key="frame" x="15" y="494.66666666666674" width="363" height="135"/>
+                                <rect key="frame" x="15" y="450.66666666666674" width="363" height="135"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="c90-3Z-EXb">
                                         <rect key="frame" x="0.0" y="0.0" width="363" height="20.333333333333332"/>
@@ -219,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D9a-bz-YAf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="463" y="1487"/>
+            <point key="canvasLocation" x="1599" y="1492"/>
         </scene>
         <!--Search-->
         <scene sceneID="QJB-sL-rfd">
@@ -290,7 +352,7 @@
                     <navigationItem key="navigationItem" title="Search" largeTitleDisplayMode="always" id="gDj-ah-cxY"/>
                     <connections>
                         <outlet property="collectionView" destination="oth-z5-Mqd" id="uq8-5E-fOY"/>
-                        <segue destination="ZNN-uG-veR" kind="show" identifier="GameCardSegue" id="tbj-HB-7rn"/>
+                        <segue destination="lxM-Ty-Fe2" kind="show" identifier="GameCardSegue" id="3dw-Z4-mUm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Nd-Fn-zED" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -447,7 +509,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tbj-HB-7rn"/>
+        <segue reference="3dw-Z4-mUm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gamecontroller.fill" catalog="system" width="128" height="79"/>

@@ -42,3 +42,13 @@ struct GameDetail: Codable {
         case screenshots
     }
 }
+
+extension GameDetail: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: GameDetail, rhs: GameDetail) -> Bool {
+        return lhs.id == rhs.id
+    }
+}

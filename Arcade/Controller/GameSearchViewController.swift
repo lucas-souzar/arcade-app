@@ -179,8 +179,8 @@ extension GameSearchViewController: UICollectionViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "GameCardSegue", let gameVC = segue.destination as? GameViewController, let game = sender as? Game {
-            gameVC.game = game
+        if segue.identifier == "GameCardSegue", let gameVC = segue.destination as? GameDetailViewController, let game = sender as? Game {
+            gameVC.selectedGame = game
         }
     }
 }

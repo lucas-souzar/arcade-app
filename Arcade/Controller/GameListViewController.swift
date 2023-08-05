@@ -111,8 +111,8 @@ extension GameListViewController: UICollectionViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "GameViewSegue", let gameVC = segue.destination as? GameViewController, let game = sender as? Game {
-            gameVC.game = game
+        if segue.identifier == "GameViewSegue", let gameVC = segue.destination as? GameDetailViewController, let game = sender as? Game {
+            gameVC.selectedGame = game
         }
     }
 }

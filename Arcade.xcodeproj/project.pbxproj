@@ -31,6 +31,8 @@
 		BE8FF82F2A61D8C7001FD416 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FF82E2A61D8C7001FD416 /* ImageDownloader.swift */; };
 		BE8FF8312A61D90C001FD416 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FF8302A61D90C001FD416 /* ImageCache.swift */; };
 		BE8FF8372A6603E0001FD416 /* GameDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FF8362A6603E0001FD416 /* GameDetails.swift */; };
+		BEB672242A7EAC1200910AA8 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB672232A7EAC1200910AA8 /* GameDetailViewController.swift */; };
+		BEB672262A7EB12200910AA8 /* BannerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB672252A7EB12200910AA8 /* BannerViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		BE8FF82E2A61D8C7001FD416 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		BE8FF8302A61D90C001FD416 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		BE8FF8362A6603E0001FD416 /* GameDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetails.swift; sourceTree = "<group>"; };
+		BEB672232A7EAC1200910AA8 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
+		BEB672252A7EB12200910AA8 /* BannerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,7 @@
 				BE6B98242A75A7DD00D932E3 /* GameViewCell.swift */,
 				BE6B98262A7B29B600D932E3 /* GameCardViewCell.swift */,
 				BE45A8FD2A7D85C20058B197 /* ProfilePhotoViewCell.swift */,
+				BEB672252A7EB12200910AA8 /* BannerViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				BE6B981C2A7596CF00D932E3 /* GameViewController.swift */,
 				BE4EFFF82A683BEC0082290C /* GameSearchViewController.swift */,
 				BE45A8FB2A7D44830058B197 /* ProfileViewController.swift */,
+				BEB672232A7EAC1200910AA8 /* GameDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -355,10 +361,12 @@
 				BE6B98292A7B5BA500D932E3 /* User.swift in Sources */,
 				BE6B981D2A7596CF00D932E3 /* GameViewController.swift in Sources */,
 				BE4EFFF92A683BEC0082290C /* GameSearchViewController.swift in Sources */,
+				BEB672262A7EB12200910AA8 /* BannerViewCell.swift in Sources */,
 				BE8FF7EE2A60EAFB001FD416 /* SceneDelegate.swift in Sources */,
 				BE6B97DB2A6F1D5700D932E3 /* UIColor+Arcade.swift in Sources */,
 				BE8FF8212A60F0E8001FD416 /* Game.swift in Sources */,
 				BE8FF82F2A61D8C7001FD416 /* ImageDownloader.swift in Sources */,
+				BEB672242A7EAC1200910AA8 /* GameDetailViewController.swift in Sources */,
 				BE6B97D92A6F197300D932E3 /* GameListViewController.swift in Sources */,
 				BE6B98252A75A7DD00D932E3 /* GameViewCell.swift in Sources */,
 			);
